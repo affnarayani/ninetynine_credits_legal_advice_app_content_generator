@@ -76,7 +76,7 @@ jobs:
         if: steps.blog_scraper.outputs.new_articles_found == 'true'
         uses: actions/checkout@v4
         with:
-          repository: affnarayani/legal_advice_test
+          repository: affnarayani/ninetynine_credits_legal_advice_app_content
           path: target_repo
           token: ${{ secrets.PAT_TOKEN }}
           
