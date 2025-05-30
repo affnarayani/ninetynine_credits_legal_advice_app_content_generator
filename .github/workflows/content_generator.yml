@@ -12,6 +12,9 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.PAT_TOKEN }}
+          fetch-depth: 0
         
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -22,6 +25,8 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
+          # Ensure we have the latest versions of Google AI libraries
+          pip install --upgrade google-generativeai google-genai
           
       - name: Run blog scraper
         run: python blog_scraper.py
@@ -74,8 +79,19 @@ jobs:
         
       - name: Commit changes to source repository
         run: |
+          # Exclude target_repo from git tracking
+          echo "target_repo/" >> .gitignore
+          
           git config user.name "GitHub Actions Bot"
           git config user.email "actions@github.com"
-          git add .
+          
+          # First add the .gitignore change
+          git add .gitignore
+          git commit -m "Update .gitignore to exclude target_repo"
+          
+          # Then add other changes
+          git add --all -- ':!target_repo'
           git diff --staged --quiet || git commit -m "Update content files via automated workflow"
+          
+          # Push with token authentication
           git push https://${{ secrets.PAT_TOKEN }}@github.com/${{ github.repository }}.git HEAD:${{ github.ref }}
