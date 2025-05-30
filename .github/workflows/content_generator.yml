@@ -1,0 +1,74 @@
+name: Content Generator Workflow
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # Run daily at midnight UTC
+  workflow_dispatch:  # Allow manual triggering
+
+jobs:
+  generate-content:
+    runs-on: ubuntu-latest
+    
+    env:
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+          
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          
+      - name: Run blog_scraper.py
+        run: python blog_scraper.py
+        
+      - name: Run resize_convert_images.py
+        run: python resize_convert_images.py
+        
+      - name: Run image_processor.py
+        run: python image_processor.py
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        
+      - name: Run article_summarizer.py
+        run: python article_summarizer.py
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        
+      - name: Run content_generator.py
+        run: python content_generator.py
+        
+      - name: Run cleaner.py
+        run: python cleaner.py
+        
+      - name: Commit changes to this repository
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add .
+          git diff --staged --quiet || git commit -m "Update content files via automated workflow"
+          git push
+          
+      - name: Checkout target repository
+        uses: actions/checkout@v3
+        with:
+          repository: affnarayani/legal_advice_test
+          token: ${{ secrets.PAT_TOKEN }}
+          path: target-repo
+          
+      - name: Update content.json in target repository
+        run: |
+          cp content.json target-repo/
+          cd target-repo
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add content.json
+          git diff --staged --quiet || git commit -m "Update content.json via automated workflow"
+          git push

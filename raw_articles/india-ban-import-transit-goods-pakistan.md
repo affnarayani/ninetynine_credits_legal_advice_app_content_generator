@@ -1,0 +1,12 @@
+### India Imposes Ban on Import and Transit of Goods from Pakistan
+
+# On 2nd May 2025, the Ministry of Commerce and Industry, through its Directorate General of Foreign Trade (DGFT), issued a significant notification prohibiting the import and transit of all goods originating in or exported from Pakistan. This measure, effective immediately, is a critical step taken under the Foreign Trade Policy (FTP) 2023, specifically through the insertion of Paragraph 2.20A. The notification, numbered 06/2025-26, highlights the government’s commitment to safeguarding national security and public policy.
+
+# The notification, published in the Gazette of India, outlines the legal framework underpinning this decision. It cites Section 3 read with Section 5 of the Foreign Trade (Development & Regulation) Act, 1992, as well as Paragraphs 1.02 and 2.01 of the FTP 2023. These provisions empower the Central Government to regulate and restrict trade activities that may pose a threat to national interests. The immediate effect of this ban means that all direct and indirect imports and transits of goods from Pakistan are now strictly prohibited.
+
+# The scope of this prohibition is comprehensive, applying to all goods, regardless of whether they are freely importable or otherwise permitted under existing trade regulations. This measure underscores the government’s resolve to take necessary actions to protect national security and uphold public policy. The notification also provides for potential exceptions, but these will require prior approval from the Government of India, ensuring that any deviations from the ban are carefully scrutinized and justified.
+
+# The implications of this notification are far-reaching, reflecting a significant shift in trade relations between India and Pakistan. This move may impact various sectors of the economy, prompting businesses and industries that rely on imports from Pakistan to seek alternative sources. It may also lead to a re-evaluation of trade policies and strategies, both domestically and internationally.
+
+# In conclusion, the notification issued by the DGFT on 2nd May 2025 marks a decisive step in regulating trade activities with Pakistan. By invoking specific legal provisions and emphasizing national security and public policy, the government has demonstrated its commitment to protecting the nation’s interests. While the ban is in place until further notice, it serves as a clear indication of the government’s stance on matters of trade and security.
+

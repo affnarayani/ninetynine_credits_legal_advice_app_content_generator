@@ -1,0 +1,7 @@
+# IBBI Notifies Fourth Amendment Regulations to Corporate Insolvency Resolution Process
+
+The Insolvency and Bankruptcy Board of India (IBBI) has introduced the Fourth Amendment Regulations to the Insolvency Resolution Process for Corporate Persons, effective May 26, 2025. These amendments aim to enhance the efficiency, transparency, and fairness of the corporate insolvency resolution process under the Insolvency and Bankruptcy Code (IBC), 2016.
+
+A key change is the amendment to Regulation 18, allowing the committee to invite interim finance providers to meetings as observers, which can facilitate better financial management. Regulation 36A has also been updated to enable resolution professionals to invite expressions of interest for resolution plans encompassing the entire corporate debtor or individual assets, broadening potential resolution options. Sub-regulation (6A) has been removed from Regulation 36B.
+
+Additionally, Regulation 38 has been amended to ensure financial creditors who did not vote in favor of the resolution plan receive proportionate and prioritized payments. Regulation 39 has been modified to clarify compliance requirements and ensure the consideration of non-compliant plans. These changes are intended to protect the interests of all stakeholders, promote a more robust and compliant resolution process, and ultimately benefit corporate debtors, creditors, and the economy.

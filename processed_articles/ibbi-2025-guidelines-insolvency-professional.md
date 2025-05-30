@@ -1,0 +1,9 @@
+# Streamlining Insolvency Professional Appointments: The IBBI’s 2025 Guidelines for Insolvency Professionals
+
+The Insolvency and Bankruptcy Board of India (IBBI) has introduced "Insolvency Professionals to act as Interim Resolution Professionals, Liquidators, Resolution Professionals and Bankruptcy Trustees (Recommendation) Guidelines, 2025," effective from July 1, 2025, to December 31, 2025. These guidelines aim to streamline and ensure transparency in the appointment process of Insolvency Professionals (IPs) by the National Company Law Tribunal (NCLT) and Debt Recovery Tribunal (DRT), based on key provisions of the Insolvency and Bankruptcy Code, 2016 (IBC).
+
+Issued under various sections of the IBC and related rules, the guidelines specify eligibility criteria for IPs seeking inclusion in the panel. These include the absence of pending disciplinary proceedings, no convictions in the last three years, submission of an expression of interest in Form A by June 22, 2025, and possession of a valid Authorization for Assignment (AFA).
+
+The IBBI will create a common, zone-wise and bench-wise panel of IPs valid for six months, to be shared with the Adjudicating Authority. The panel will be sorted based on the volume of ongoing liquidation and corporate insolvency resolution process assignments, with registration date serving as a tie-breaker. Selected IPs are expected to accept appointments unless justifiable refusal is permitted by the NCLT, DRT, or IBBI, with unjustified refusal leading to a six-month removal from the panel.
+
+The guidelines also mandate that IPs maintain their registration and membership during the panel's validity. The Adjudicating Authority retains discretion in IP appointments from the panel. These guidelines, which repeal the 2024 guidelines, represent a move towards a more efficient and fair IP appointment process, thereby enhancing the effectiveness of the IBC.
