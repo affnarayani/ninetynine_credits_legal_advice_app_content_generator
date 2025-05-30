@@ -3,7 +3,7 @@ name: Content Generator Workflow
 on:
   workflow_dispatch:  # Manual trigger
   schedule:
-    - cron: '0 0 * * 1'  # Run weekly on Monday at midnight UTC
+    - cron: '30 18 * * *'  # Run daily at 12 AM IST (6:30 PM UTC)
 
 jobs:
   generate-content:
