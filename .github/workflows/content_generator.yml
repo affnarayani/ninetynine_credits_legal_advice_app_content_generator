@@ -108,19 +108,24 @@ jobs:
       - name: Commit changes to source repository
         if: steps.blog_scraper.outputs.new_articles_found == 'true'
         run: |
-          # Exclude target_repo from git tracking
-          echo "target_repo/" >> .gitignore
-          
+          # Configure git
           git config user.name "GitHub Actions Bot"
           git config user.email "actions@github.com"
           
-          # First add the .gitignore change
+          # Add all changes except target_repo before modifying .gitignore
+          git add --all -- ':!target_repo'
+          
+          # Check if there are changes to commit
+          if ! git diff --staged --quiet; then
+            git commit -m "Update content files via automated workflow"
+          else
+            echo "No content changes to commit"
+          fi
+          
+          # Now add target_repo to .gitignore to prevent future issues
+          echo "target_repo/" >> .gitignore
           git add .gitignore
           git commit -m "Update .gitignore to exclude target_repo"
-          
-          # Then add other changes
-          git add --all -- ':!target_repo'
-          git diff --staged --quiet || git commit -m "Update content files via automated workflow"
           
           # Push with token authentication
           git push https://${{ secrets.PAT_TOKEN }}@github.com/${{ github.repository }}.git HEAD:${{ github.ref }}
