@@ -39,4 +39,4 @@ env/
 Thumbs.db
 
 # Logs
-*.log
+*.logtarget_repo/
