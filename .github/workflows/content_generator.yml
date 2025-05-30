@@ -112,20 +112,14 @@ jobs:
           git config user.name "GitHub Actions Bot"
           git config user.email "actions@github.com"
           
-          # Add all changes except target_repo before modifying .gitignore
+          # Add all changes except target_repo
           git add --all -- ':!target_repo'
           
           # Check if there are changes to commit
           if ! git diff --staged --quiet; then
             git commit -m "Update content files via automated workflow"
+            # Push with token authentication
+            git push https://${{ secrets.PAT_TOKEN }}@github.com/${{ github.repository }}.git HEAD:${{ github.ref }}
           else
             echo "No content changes to commit"
           fi
-          
-          # Now add target_repo to .gitignore to prevent future issues
-          echo "target_repo/" >> .gitignore
-          git add .gitignore
-          git commit -m "Update .gitignore to exclude target_repo"
-          
-          # Push with token authentication
-          git push https://${{ secrets.PAT_TOKEN }}@github.com/${{ github.repository }}.git HEAD:${{ github.ref }}
