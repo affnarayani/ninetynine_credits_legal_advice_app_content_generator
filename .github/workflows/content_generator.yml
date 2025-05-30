@@ -2,15 +2,12 @@ name: Content Generator Workflow
 
 on:
   schedule:
-    - cron: '0 0 * * *'  # Run daily at midnight UTC
+    - cron: '0 0 * * *'  # Run daily at midnight
   workflow_dispatch:  # Allow manual triggering
 
 jobs:
   generate-content:
     runs-on: ubuntu-latest
-    
-    env:
-      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
     
     steps:
       - name: Checkout repository
@@ -26,49 +23,65 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
           
-      - name: Run blog_scraper.py
+      - name: Run blog scraper
         run: python blog_scraper.py
         
-      - name: Run resize_convert_images.py
+      - name: Run image resizer and converter
         run: python resize_convert_images.py
         
-      - name: Run image_processor.py
+      - name: Run image processor
         run: python image_processor.py
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-        
-      - name: Run article_summarizer.py
+          
+      - name: Run article summarizer
         run: python article_summarizer.py
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-        
-      - name: Run content_generator.py
+          
+      - name: Run content generator
         run: python content_generator.py
-        
-      - name: Run cleaner.py
-        run: python cleaner.py
         
       - name: Commit changes to this repository
         run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add .
-          git diff --staged --quiet || git commit -m "Update content files via automated workflow"
+          git config --global user.name 'GitHub Actions Bot'
+          git config --global user.email 'actions@github.com'
+          git add content.json processed_images/* processed_articles/* raw_articles/* raw_images/*
+          git diff --staged --quiet || git commit -m "Update content and images [skip ci]"
           git push
-          
+        
       - name: Checkout target repository
         uses: actions/checkout@v3
         with:
           repository: affnarayani/legal_advice_test
           token: ${{ secrets.PAT_TOKEN }}
-          path: target-repo
+          path: target_repo
           
-      - name: Update content.json in target repository
+      - name: Copy content.json to target repository
         run: |
-          cp content.json target-repo/
-          cd target-repo
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add content.json
-          git diff --staged --quiet || git commit -m "Update content.json via automated workflow"
+          cp content.json target_repo/content.json
+          
+      - name: Copy processed images to target repository
+        run: |
+          mkdir -p target_repo/images
+          cp -r processed_images/* target_repo/images/
+          
+      - name: Commit changes to target repository
+        run: |
+          cd target_repo
+          git config --global user.name 'GitHub Actions Bot'
+          git config --global user.email 'actions@github.com'
+          git add content.json images/*
+          git diff --staged --quiet || git commit -m "Update content and images [skip ci]"
+          git push
+          
+      - name: Run cleaner
+        run: python cleaner.py
+        
+      - name: Commit cleanup changes
+        run: |
+          git config --global user.name 'GitHub Actions Bot'
+          git config --global user.email 'actions@github.com'
+          git add .
+          git diff --staged --quiet || git commit -m "Clean up temporary files [skip ci]"
           git push
