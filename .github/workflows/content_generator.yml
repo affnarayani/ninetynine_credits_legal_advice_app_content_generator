@@ -29,27 +29,51 @@ jobs:
           pip install --upgrade google-generativeai google-genai
           
       - name: Run blog scraper
-        run: python blog_scraper.py
+        id: blog_scraper
+        run: |
+          python blog_scraper.py > scraper_output.log 2>&1
+          if grep -q "No new articles found" scraper_output.log; then
+            echo "new_articles_found=false" >> $GITHUB_OUTPUT
+            cat scraper_output.log
+          else
+            echo "new_articles_found=true" >> $GITHUB_OUTPUT
+            cat scraper_output.log
+          fi
+        
+      - name: Check if new articles were found
+        id: check_articles
+        run: |
+          if [ "${{ steps.blog_scraper.outputs.new_articles_found }}" == "false" ]; then
+            echo "No new articles found. Exiting workflow successfully."
+            exit 0
+          else
+            echo "New articles found. Continuing workflow."
+          fi
         
       - name: Resize and convert images
+        if: steps.blog_scraper.outputs.new_articles_found == 'true'
         run: python resize_convert_images.py
         
       - name: Process images with Gemini
+        if: steps.blog_scraper.outputs.new_articles_found == 'true'
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: python image_processor.py
         
       - name: Summarize articles
+        if: steps.blog_scraper.outputs.new_articles_found == 'true'
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: python article_summarizer.py
         
       - name: Generate content
+        if: steps.blog_scraper.outputs.new_articles_found == 'true'
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: python content_generator.py
         
       - name: Checkout target repository
+        if: steps.blog_scraper.outputs.new_articles_found == 'true'
         uses: actions/checkout@v4
         with:
           repository: affnarayani/legal_advice_test
@@ -57,15 +81,18 @@ jobs:
           token: ${{ secrets.PAT_TOKEN }}
           
       - name: Update content.json in target repository
+        if: steps.blog_scraper.outputs.new_articles_found == 'true'
         run: |
           cp content.json target_repo/content.json
           
       - name: Copy processed images to target repository
+        if: steps.blog_scraper.outputs.new_articles_found == 'true'
         run: |
           mkdir -p target_repo/images
           cp -r processed_images/* target_repo/images/
           
       - name: Commit and push changes to target repository
+        if: steps.blog_scraper.outputs.new_articles_found == 'true'
         working-directory: target_repo
         run: |
           git config user.name "GitHub Actions Bot"
@@ -75,9 +102,11 @@ jobs:
           git push
           
       - name: Run cleaner
+        if: steps.blog_scraper.outputs.new_articles_found == 'true'
         run: python cleaner.py
         
       - name: Commit changes to source repository
+        if: steps.blog_scraper.outputs.new_articles_found == 'true'
         run: |
           # Exclude target_repo from git tracking
           echo "target_repo/" >> .gitignore
