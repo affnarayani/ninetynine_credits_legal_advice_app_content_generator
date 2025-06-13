@@ -1,7 +1,19 @@
+Image saved to raw_images/indialaw-monthly-newsletter-may-edition.png
+Article saved to raw_articles/indialaw-monthly-newsletter-may-edition.md
+
+Article 1:
+----------
+ID: indialaw-monthly-newsletter-may-edition
+Link: https://www.indialaw.in/blog/il-news-blog/indialaw-monthly-newsletter-may-edition/
+Title: IndiaLaw Monthly Newsletter – May Edition
+Image: https://www.indialaw.in/wp-content/uploads/Screenshot-2025-06-13-115610.png
+Saved image to: raw_images/indialaw-monthly-newsletter-may-edition.png
+Saved article to: raw_articles/indialaw-monthly-newsletter-may-edition.md
+Added indialaw-monthly-newsletter-may-edition to history.json
 Image saved to raw_images/rabies-death-forum-rejects-insurers-take-on-accident.jpg
 Article saved to raw_articles/rabies-death-forum-rejects-insurers-take-on-accident.md
 
-Article 1:
+Article 2:
 ----------
 ID: rabies-death-forum-rejects-insurers-take-on-accident
 Link: https://www.indialaw.in/blog/consumer/rabies-death-forum-rejects-insurers-take-on-accident/
@@ -10,18 +22,6 @@ Image: https://www.indialaw.in/wp-content/uploads/qb0-6mf7-cu-1080x840.jpg
 Saved image to: raw_images/rabies-death-forum-rejects-insurers-take-on-accident.jpg
 Saved article to: raw_articles/rabies-death-forum-rejects-insurers-take-on-accident.md
 Added rabies-death-forum-rejects-insurers-take-on-accident to history.json
-Image saved to raw_images/indias-10-minute-commerce-boom-its-legal-tangle.jpg
-Article saved to raw_articles/indias-10-minute-commerce-boom-its-legal-tangle.md
-
-Article 2:
-----------
-ID: indias-10-minute-commerce-boom-its-legal-tangle
-Link: https://www.indialaw.in/blog/consumer/indias-10-minute-commerce-boom-its-legal-tangle/
-Title: From Shelf to Scooter: The Legal Mess Behind India’s 10-Minute Commerce Boom (Dark Stores, Quick Commerce & Zonal Compliance Chaos)
-Image: https://www.indialaw.in/wp-content/uploads/ufdcdgnonvi-1080x608.jpg
-Saved image to: raw_images/indias-10-minute-commerce-boom-its-legal-tangle.jpg
-Saved article to: raw_articles/indias-10-minute-commerce-boom-its-legal-tangle.md
-Added indias-10-minute-commerce-boom-its-legal-tangle to history.json
 Image saved to raw_images/sebi-kyc-guidelines-boost-accessibility.jpg
 Article saved to raw_articles/sebi-kyc-guidelines-boost-accessibility.md
 
@@ -46,22 +46,10 @@ Image: https://www.indialaw.in/wp-content/uploads/abf47a68-28d4-4f52-803f-db4770
 Saved image to: raw_images/supreme-court-rules-developer-not-liable-for-homebuyers-loan-interest-due-to-delay-in-flat-possession.jpg
 Saved article to: raw_articles/supreme-court-rules-developer-not-liable-for-homebuyers-loan-interest-due-to-delay-in-flat-possession.md
 Added supreme-court-rules-developer-not-liable-for-homebuyers-loan-interest-due-to-delay-in-flat-possession to history.json
-Image saved to raw_images/hc-grants-full-reimbursement-for-surgery.jpg
-Article saved to raw_articles/hc-grants-full-reimbursement-for-surgery.md
-
-Article 5:
-----------
-ID: hc-grants-full-reimbursement-for-surgery
-Link: https://www.indialaw.in/blog/civil/hc-grants-full-reimbursement-for-surgery/
-Title: When Procedure Fails, The Constitution Steps In: Bombay High Court Grants Full Reimbursement For Heart Surgery
-Image: https://www.indialaw.in/wp-content/uploads/4566532-1080x721.jpg
-Saved image to: raw_images/hc-grants-full-reimbursement-for-surgery.jpg
-Saved article to: raw_articles/hc-grants-full-reimbursement-for-surgery.md
-Added hc-grants-full-reimbursement-for-surgery to history.json
 Image saved to raw_images/new-cersai-compliance-alert.png
 Article saved to raw_articles/new-cersai-compliance-alert.md
 
-Article 6:
+Article 5:
 ----------
 ID: new-cersai-compliance-alert
 Link: https://www.indialaw.in/blog/banking-and-finance/new-cersai-compliance-alert/
@@ -73,7 +61,7 @@ Added new-cersai-compliance-alert to history.json
 Image saved to raw_images/madras-high-court-affirms-same-sex-couples-can-constitute-a-family-even-without-marriage.jpg
 Article saved to raw_articles/madras-high-court-affirms-same-sex-couples-can-constitute-a-family-even-without-marriage.md
 
-Article 7:
+Article 6:
 ----------
 ID: madras-high-court-affirms-same-sex-couples-can-constitute-a-family-even-without-marriage
 Link: https://www.indialaw.in/blog/civil/madras-high-court-affirms-same-sex-couples-can-constitute-a-family-even-without-marriage/
@@ -85,7 +73,7 @@ Added madras-high-court-affirms-same-sex-couples-can-constitute-a-family-even-wi
 Image saved to raw_images/abhishek-singh-v-ajay-kumar-ors.jpg
 Article saved to raw_articles/abhishek-singh-v-ajay-kumar-ors.md
 
-Article 8:
+Article 7:
 ----------
 ID: abhishek-singh-v-ajay-kumar-ors
 Link: https://www.indialaw.in/blog/criminal/abhishek-singh-v-ajay-kumar-ors/
@@ -97,7 +85,7 @@ Added abhishek-singh-v-ajay-kumar-ors to history.json
 Image saved to raw_images/consumer-rights-vs-corporate-responsibility-a-legal-perspective.jpg
 Article saved to raw_articles/consumer-rights-vs-corporate-responsibility-a-legal-perspective.md
 
-Article 9:
+Article 8:
 ----------
 ID: consumer-rights-vs-corporate-responsibility-a-legal-perspective
 Link: https://www.indialaw.in/blog/civil/consumer-rights-vs-corporate-responsibility-a-legal-perspective/
@@ -109,7 +97,7 @@ Added consumer-rights-vs-corporate-responsibility-a-legal-perspective to history
 Image saved to raw_images/indiamart-puma-ip.png
 Article saved to raw_articles/indiamart-puma-ip.md
 
-Article 10:
+Article 9:
 ----------
 ID: indiamart-puma-ip
 Link: https://www.indialaw.in/blog/intellectual-property-rights/indiamart-puma-ip/
@@ -118,15 +106,3 @@ Image: https://www.indialaw.in/wp-content/uploads/Capture-64.png
 Saved image to: raw_images/indiamart-puma-ip.png
 Saved article to: raw_articles/indiamart-puma-ip.md
 Added indiamart-puma-ip to history.json
-Image saved to raw_images/karnataka-hc-arbitrator-appointments.png
-Article saved to raw_articles/karnataka-hc-arbitrator-appointments.md
-
-Article 11:
-----------
-ID: karnataka-hc-arbitrator-appointments
-Link: https://www.indialaw.in/blog/arbitration-and-conciliation/karnataka-hc-arbitrator-appointments/
-Title: Karnataka High Court Reins in Arbitrator Overreach: A Check on Unilateral Appointments and Procedural Misuse
-Image: https://www.indialaw.in/wp-content/uploads/Capture-62.png
-Saved image to: raw_images/karnataka-hc-arbitrator-appointments.png
-Saved article to: raw_articles/karnataka-hc-arbitrator-appointments.md
-Added karnataka-hc-arbitrator-appointments to history.json
