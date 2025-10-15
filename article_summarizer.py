@@ -15,7 +15,7 @@ def summarize_article(content):
     """
     Summarize an article using Gemini API
     """
-    model = genai.GenerativeModel('gemini-2.0-flash')
+    model = genai.GenerativeModel('gemini-2.5-flash')
     
     # Extract the title from the content if it exists
     title = ""

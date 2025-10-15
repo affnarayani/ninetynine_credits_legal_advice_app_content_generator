@@ -46,7 +46,7 @@ def generate_similar_image(image_path, output_path):
         
         # Generate content using Gemini model
         response = client.models.generate_content(
-            model="gemini-2.0-flash-preview-image-generation",
+            model="gemini-2.5-flash-image",
             contents=[text_input, image],
             config=types.GenerateContentConfig(
                 response_modalities=['TEXT', 'IMAGE']
