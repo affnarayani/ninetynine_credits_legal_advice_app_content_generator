@@ -26,7 +26,7 @@ def summarize_article(content):
             break
     
     prompt = f"""
-    Summarize the following article.
+    Summarize the following article in maximum 2000 characters.
     Maintain the key points and professional tone.
     Keep the summary informative and concise.
     Format the output as proper Markdown with:
